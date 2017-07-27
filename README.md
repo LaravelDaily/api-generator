@@ -4,6 +4,8 @@ Package to create API Controller and Route entry with one `Artisan` command.
 
 For now we're starting with only one simple command and will expand functionality as needed. Please submit your suggestions in `Issues` section.
 
+__Notice__: if you want to generate not only API, but full admin panel - check out our [QuickAdminPanel.com](https://quickadminpanel.com)
+
 # Installation and Usage
 
 1. Install the package via `composer require laraveldaily/apigenerator`
@@ -75,3 +77,7 @@ And this line will be added to `routes/api.php`:
 ```
 Route::resource('projects', 'Api/ProjectsController', ['except' => ['create', 'edit']]);
 ```
+
+# License
+
+The MIT License (MIT). Please see [License File](https://github.com/LaravelDaily/api-generator/blob/master/license.md) for more information.
