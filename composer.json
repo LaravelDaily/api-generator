@@ -1,0 +1,24 @@
+{
+    "name": "laraveldaily/apigenerator",
+    "description": "API Generator for Laravel 5",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "KarolisNarkevicius",
+            "email": "narkevicius.karolis@gmail.com"
+        },
+        {
+            "name": "PovilasKorop",
+            "email": "povilas@laraveldaily.com"
+        }
+    ],
+    "version": "0.1.0",
+    "require": {
+        "laravel/framework": "5.4.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Laraveldaily\\Apigenerator\\": "src/"
+        }
+    }
+}

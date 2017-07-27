@@ -56,22 +56,22 @@ class GenerateApiCommand extends Command
             //override?
             if ($this->confirm('Controller exists. Do you wish to override?')) {
                 if ($controller->create()) {
-                    $this->info('Created api controller.');
+                    $this->info('Created API controller.');
                 } else {
                     $this->error('Couldn\'t create the controller.');
                 }
             }
         } else {
             $controller->create();
-            $this->info('Created api controller.');
+            $this->info('Created API controller.');
         }
 
         $route = new ApiRouteGenerator();
         if (!$route->resource($model)) {
             $route->generate();
-            $this->info('Created api route.');
+            $this->info('Created API route.');
         } else {
-            $this->info('Api route already exists.');
+            $this->info('API route already exists.');
         }
 
     }
