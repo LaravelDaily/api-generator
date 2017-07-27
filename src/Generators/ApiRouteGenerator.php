@@ -24,15 +24,14 @@ class ApiRouteGenerator
 
         $this->blockExists = false;
 
-
         if (!file_exists($this->routePath)) {
             file_put_contents('<?php', $this->routePath);
         }
 
         $this->file = file_get_contents($this->routePath);
 
-        //remove php ending tag
-        //because we allways append to the end
+        // remove php ending tag
+        // because we always append to the end
         $this->file = str_replace('?>', '', $this->file);
 
         $this->makeBlock();
@@ -54,7 +53,7 @@ class ApiRouteGenerator
 
     public function resource($name)
     {
-        $line = "Route::resource('" . lcfirst($name) . "', '" . str_plural($name) . "Controller', ['except' => ['create', 'edit']]);";
+        $line = "Route::resource('" . lcfirst($name) . "', 'Api\\" . $name . "Controller', ['except' => ['create', 'edit']]);";
         if (!$this->blockHasResource($name)) {
             $this->block[] = $line;
             return false;
@@ -86,7 +85,7 @@ class ApiRouteGenerator
     private function blockHasResource($name)
     {
         $block = implode('\n', $this->block);
-        if (preg_match("/Route\:\:resource\('" . lcfirst($name) . "', '" . str_plural($name) . "Controller'\)/", $block)) {
+        if (preg_match("/Route\:\:resource\('" . lcfirst($name) . "', 'Api\\" . $name . "Controller'\)/", $block)) {
             return true;
         }
         return false;

@@ -67,7 +67,7 @@ class GenerateApiCommand extends Command
         }
 
         $route = new ApiRouteGenerator();
-        if (!$route->resource($model)) {
+        if (!$route->resource(str_plural($model))) {
             $route->generate();
             $this->info('Created API route.');
         } else {

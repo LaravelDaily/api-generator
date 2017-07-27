@@ -4,17 +4,24 @@ Package to create API Controller and Route entry with one `Artisan` command.
 
 For now we're starting with only one simple command and will expand functionality as needed. Please submit your suggestions in `Issues` section.
 
-# Usage
+# Installation and Usage
 
-Run `php artisan make:api --model=XXXXX` where XXXXX is your model name. Model should exist already, our package won't create it. 
+1. Install the package via `composer require laraveldaily/apigenerator`
+
+2. Add `Laraveldaily\Apigenerator\ApigeneratorServiceProvider::class` to your `\config\app.php` providers.
+
+3. That's it: run `php artisan make:api --model=XXXXX` where XXXXX is your model name. 
 
 This command will generate API Controller and new entry in `routes/api.php` file.
+
+__Notice__: Model should exist already, our package won't create it. 
+
 
 __Example__
 
 `php artisan make:api --model=Project`
 
-Will generate this:
+Will generate the file __app\Http\Controllers\Api\ProjectsController.php__:
 
 ```
 <?php
@@ -66,5 +73,5 @@ class ProjectsController extends Controller
 And this line will be added to `routes/api.php`:
 
 ```
-Route::resource('projects', 'ProjectsController', ['except' => ['create', 'edit']]);
+Route::resource('projects', 'Api/ProjectsController', ['except' => ['create', 'edit']]);
 ```
