@@ -8,7 +8,7 @@ For now we're starting with only one simple command and will expand functionalit
 
 1. Install the package via `composer require laraveldaily/apigenerator`
 
-2. Add `Laraveldaily\Apigenerator\ApigeneratorServiceProvider::class` to your `\config\app.php` providers.
+2. Add `Laraveldaily\Apigenerator\ApiGeneratorProvider::class` to your `config\app.php` providers.
 
 3. That's it: run `php artisan make:api --model=XXXXX` where XXXXX is your model name. 
 
