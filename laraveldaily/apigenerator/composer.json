@@ -1,0 +1,10 @@
+{
+    "name": "laraveldaily/apigenerator",
+    "authors": [
+        {
+            "name": "Laravel Daily",
+            "email": "info@laraveldaily.com"
+        }
+    ],
+    "require": {}
+}

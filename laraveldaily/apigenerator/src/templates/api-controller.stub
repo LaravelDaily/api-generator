@@ -1,0 +1,43 @@
+<?php
+
+namespace App\Http\Controllers\Api;
+
+use App\$_MODEL_NAME_$;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+
+class $_MODEL_NAME_PLURAL_$Controller extends Controller
+{
+    public function index()
+    {
+        return $_MODEL_NAME_$::all();
+    }
+
+    public function store(Request $request)
+    {
+        $$_MODEL_NAME_LOWER_$ = $_MODEL_NAME_$::create($request->all());
+
+        return $$_MODEL_NAME_LOWER_$;
+    }
+
+    public function show($id)
+    {
+        return $_MODEL_NAME_$::findOrFail($id);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $$_MODEL_NAME_LOWER_$ = $_MODEL_NAME_$::findOrFail($id);
+        $$_MODEL_NAME_LOWER_$->update($request->all());
+
+        return $$_MODEL_NAME_LOWER_$;
+    }
+
+    public function destroy($id)
+    {
+        $$_MODEL_NAME_LOWER_$ = $_MODEL_NAME_$::findOrFail($id);
+        $$_MODEL_NAME_LOWER_$->delete();
+
+        return '';
+    }
+}
