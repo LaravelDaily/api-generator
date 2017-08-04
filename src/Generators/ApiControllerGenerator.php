@@ -33,7 +33,7 @@ class ApiControllerGenerator
         //check if api path exists
         if (!file_exists(base_path('app/Http/Controllers/Api'))) {
             //if not create
-            mkdir(base_path('app/Http/Controllers/Api'), 755);
+            mkdir(base_path('app/Http/Controllers/Api'), 775);
         }
 
         file_put_contents(base_path('app/Http/Controllers/Api/' . str_plural($this->name) . 'Controller.php'), $this->template->string);
