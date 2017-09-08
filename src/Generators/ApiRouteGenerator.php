@@ -85,7 +85,10 @@ class ApiRouteGenerator
     private function blockHasResource($name)
     {
         $block = implode('\n', $this->block);
-        if (preg_match("/Route\:\:resource\('" . lcfirst($name) . "', 'Api\\" . $name . "Controller'\)/", $block)) {
+        if ($block == '') {
+            return false;
+        }
+        if (preg_match(preg_quote("/Route::resource('" . lcfirst($name) . "', 'Api\\" . $name . "Controller'/"), $block)) {
             return true;
         }
         return false;

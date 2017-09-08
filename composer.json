@@ -14,7 +14,7 @@
     ],
     "version": "0.1.5",
     "require": {
-        "laravel/framework": "5.4.*"
+        "laravel/framework": "5.4.*|5.5.*"
     },
     "autoload": {
         "psr-4": {
