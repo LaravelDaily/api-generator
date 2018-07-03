@@ -22,29 +22,12 @@ class GenerateApiCommand extends Command
      */
     protected $description = 'Creates api scaffolding';
 
-    /**
-     * Create a new command instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        parent::__construct();
-    }
-
-    /**
-     * Execute the console command.
-     *
-     * @return mixed
-     */
     public function handle()
     {
-        //check model
-
+        $folder = trim($this->ask('Models folder', 'app'), '/');
         $model = ucfirst($this->option('model'));
 
-        $modelPath = base_path('app/' . $model . '.php');
-        if (!file_exists($modelPath)) {
+        if (!file_exists($modelPath = base_path("$folder/$model.php"))) {
             $this->error('Model not found at ' . $modelPath);
             return null;
         }
@@ -73,6 +56,5 @@ class GenerateApiCommand extends Command
         } else {
             $this->info('API route already exists.');
         }
-
     }
 }

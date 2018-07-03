@@ -10,7 +10,7 @@ class Template
 
     public function stub($name)
     {
-        $this->template = file_get_contents(__DIR__ . "/../templates/" . $name . '.stub');
+        $this->template = file_get_contents(__DIR__ . '/../templates/' . $name . '.stub');
         return $this;
     }
 
@@ -25,5 +25,4 @@ class Template
         $this->string = str_replace(array_keys($this->variables), array_values($this->variables), $this->template);
         return $this;
     }
-
 }
