@@ -25,7 +25,7 @@ class ApiControllerGenerator
 
     public function exists()
     {
-        return file_exists(base_path('app/Http/Controllers/Api/' . str_plural($this->name) . "Controller.php"));
+        return file_exists(base_path('app/Http/Controllers/Api/' . str_plural($this->name) . 'Controller.php'));
     }
 
     public function create()
@@ -42,7 +42,5 @@ class ApiControllerGenerator
             return true;
         }
         return false;
-
     }
-
 }
