@@ -53,7 +53,7 @@ class ApiRouteGenerator
 
     public function resource($name)
     {
-        $line = "Route::apiResource('" . lcfirst($name) . "', 'Api\\" . $name . "Controller');";
+        $line = "Route::apiResource('v1/" . lcfirst($name) . "', 'Api\\" . $name . "Controller');";
         if (!$this->blockHasResource($name)) {
             $this->block[] = $line;
             return false;
